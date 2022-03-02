@@ -1,6 +1,8 @@
 import pygame
+import docker
 from game import Game
 from player import Player
+client = docker.from_env()
 pygame.init()
 
 
@@ -29,6 +31,9 @@ while running:
 
     # mettre à jour l'ecran
     pygame.display.flip()
+
+    # Test Docker Container
+    # client.containers.run()
 
     # Si le joueur ferme la fenêtre
     for event in pygame.event.get():
